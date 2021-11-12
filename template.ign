@@ -1,0 +1,16 @@
+{
+  "ignition": {
+    "version": "3.3.0"
+  },
+  "passwd": {
+    "users": [
+      {
+        "groups": [
+          "wheel"
+        ],
+        "name": "me",
+        "passwordHash": "TzyT94^ka"
+      }
+    ]
+  }
+}
