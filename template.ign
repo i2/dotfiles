@@ -14,11 +14,30 @@
       }
     ]
   },
-  "storage": {
+  "storage": {  
+    "filesystems": [
+      {
+        "device": "/dev/mapper/root",
+        "format": "xfs",
+        "label": "root",
+        "wipeFilesystem": true
+      }
+    ],
+    "luks": [
+      {
+        "clevis": {
+          "tpm2": true
+         },
+         "device": "/dev/disk/by-partlabel/root",
+         "label": "luks-root",
+         "name": "root",
+         "wipeVolume": true
+      }
+    ],
     "files": [
       {
         "contents": {
-          "source": "data:,CoreOS%0A"
+          "source": "data:,pc%0A"
         },
         "mode": 420,
         "path": "/etc/hostname"
@@ -49,11 +68,11 @@
   "systemd": {
     "units": [
       {
-        "enabled": true,
+        "enabled": false,
         "name": "docker.service"
       },
       {
-        "enabled": true,
+        "enabled": false,
         "name": "containerd.service"
       },
       {
